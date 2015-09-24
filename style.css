@@ -1,0 +1,92 @@
+@import url(./font/stylesheet.css);
+.reveal {
+  background-image: url("./back.jpg");
+  background-size: cover; }
+  .reveal h1, .reveal h2, .reveal h3 {
+    font-family: 'Arvo', serif; }
+  .reveal .mock-window {
+    height: 60%;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    border-radius: 6px;
+    min-height: 400px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); }
+    .reveal .mock-window > .top {
+      height: 30px;
+      background-image: url("window-top.png");
+      background-size: 100%;
+      background-position: top left;
+      background-repeat: no-repeat;
+      text-align: left;
+      margin-top: -14px; }
+      .reveal .mock-window > .top i {
+        float: left;
+        height: 14px;
+        width: 14px;
+        border-radius: 100%;
+        background: red;
+        text-align: center;
+        position: relative;
+        margin: 6px 0;
+        margin-right: 10px; }
+        .reveal .mock-window > .top i::before {
+          content: "";
+          display: inline-block;
+          background: black;
+          height: 2px;
+          width: 2px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto; }
+  .reveal pre {
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.4em; }
+    .reveal pre .terminal {
+      color: white;
+      background: none;
+      box-shadow: none;
+      font-family: "pragmata";
+      display: inline; }
+    .reveal pre code {
+      display: inline;
+      background: none; }
+  .reveal section img {
+    background: none;
+    border: none;
+    box-shadow: none; }
+  .reveal .typed-cursor {
+    opacity: 1;
+    font-weight: 100;
+    -webkit-animation: blink 0.5s infinite;
+    -moz-animation: blink 0.5s infinite;
+    animation: blink 0.5s infinite;
+    background-color: rgba(255, 255, 255, 0.5); }
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/*# sourceMappingURL=style.css.map */

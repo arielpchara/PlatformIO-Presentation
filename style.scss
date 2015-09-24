@@ -1,0 +1,90 @@
+@import "./node_modules/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "./font/stylesheet.css";
+
+.reveal {
+  h1,h2,h3 {
+    font-family: 'Arvo', serif;
+  }
+  background-image: url("./back.jpg");
+  background-size: cover;
+  .mock-window {
+    height: 60%;
+    @include background-image(linear-gradient(rgba(black,0.8) 0%, rgba(black,0.6) 100%));
+    border-radius: 6px;
+    min-height: 400px;
+
+    // border: 1px solid #EEE;
+    box-shadow: 2px 2px 10px rgba(black,0.5);
+    >.top {
+      height: 30px;
+      background-image: url("window-top.png");
+      background-size: 100%;
+      background-position: top left;
+      background-repeat: no-repeat;
+      text-align: left;
+      margin-top: -14px;
+      i {
+        float: left;
+        height: 14px;
+        width: 14px;
+        border-radius: 100%;
+        background: red;
+        text-align: center;
+        position: relative;
+        margin: 6px 0;
+        margin-right: 10px;
+        &::before {
+          content: "";
+          display: inline-block;
+          background: black;
+          height: 2px;
+          width: 2px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+    }
+  }
+  pre {
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.4em;
+    .terminal {
+      color: white;
+      background: none;
+      box-shadow: none;
+      font-family: "pragmata";
+      display: inline;
+    }
+    code {
+      display: inline;
+      background: none;
+    }
+  }
+  section {
+    img {
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  .typed-cursor{
+      opacity: 1;
+      font-weight: 100;
+      @include animation(blink 0.5s infinite);
+      background-color: rgba(white,.5);
+  }
+
+  @include keyframes(blink) {
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+  }
+}

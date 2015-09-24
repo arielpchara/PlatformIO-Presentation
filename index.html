@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <title>PlatformIO</title>
+
+
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/monokai.min.css">
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <img src="img/platformio-logo.png" alt="">
+        <h1>PlatformIO</h1>
+      </section>
+      <section>
+        <div class="mock-window">
+          <div class="top"></div>
+
+<pre class=""><span class="terminal"><code class="cpp">
+#inlude &lt;PlatformIO&gt;
+/*
+Compilar e Carregar programa
+Gerenciar biblioteca
+Gerenciar diversos dispositivos
+*/
+</code></span></pre>
+        </div>
+      </section>
+
+      <section>
+        <section>
+
+  <h1>O Básico</h1>
+
+        </section>
+        <section>
+
+
+<div class="mock-window">
+<div class="top"></div>
+<pre><span class="terminal"><code class="cpp">
+/*
+Integraçoes com outros IDEs
+Integração continua
+Monitor da porta serial
+Upload automatico do programa
+Tool chains
+*/
+</code></span></pre>
+</div>
+
+</section>
+      </section>
+
+      <section>
+        <section>
+
+  <h1>Instalação</h1>
+
+        </section>
+        <section>
+
+
+<div class="mock-window">
+<div class="top"></div><pre><span class="terminal"><code class="cpp"
+># update dependent packages to the latest versions
+pip install -U pip setuptools
+
+# install/upgrade the latest version of PlatformIO
+pip install -U platformio
+</code></span></pre>
+</div>
+
+</section>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="typed.js/js/typed.js" type="text/javascript"></script>
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [{
+        src: 'reveal.js/lib/js/classList.js',
+        condition: function() {
+          return !document.body.classList;
+        }
+      }, {
+        src: 'reveal.js/plugin/markdown/marked.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'reveal.js/plugin/markdown/markdown.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'reveal.js/plugin/highlight/highlight.js',
+        async: true,
+        condition: function() {
+          return !!document.querySelector('pre code');
+        },
+        callback: function() {
+          hljs.initHighlightingOnLoad();
+        }
+      }, {
+        src: 'reveal.js/plugin/zoom-js/zoom.js',
+        async: true
+      }, {
+        src: 'reveal.js/plugin/notes/notes.js',
+        async: true
+      }]
+    });
+
+    Reveal.addEventListener('slidechanged', function(event) {
+      var string = $(event.currentSlide).find(".terminal").html();
+      $(event.currentSlide).find(".terminal").typed({
+        strings: [string],
+        typeSpeed: -50,
+        startDelay: 300,
+        cursorChar: " "
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

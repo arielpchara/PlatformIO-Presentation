@@ -1,0 +1,7 @@
+node_module
+.sass-cache
+.DS_Store
+webkit*
+google-chrome.psd
+typed.js
+reveal.js
