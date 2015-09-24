@@ -8,7 +8,7 @@
 
 
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/monokai.min.css">
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
@@ -26,15 +26,18 @@
       <section>
         <div class="mock-window">
           <div class="top"></div>
-
+<div class="scroll">
 <pre class=""><span class="terminal"><code class="cpp">
 #inlude &lt;PlatformIO&gt;
+
+
 /*
 Compilar e Carregar programa
 Gerenciar biblioteca
 Gerenciar diversos dispositivos
 */
-</code></span></pre>
+</code></span></pre></div>
+
         </div>
       </section>
 
@@ -49,7 +52,11 @@ Gerenciar diversos dispositivos
 
 <div class="mock-window">
 <div class="top"></div>
+<div class="scroll">
 <pre><span class="terminal"><code class="cpp">
+#inlude &lt;PlatformIO&gt;
+#inlude &lt;MainOptions&gt;
+
 /*
 Integraçoes com outros IDEs
 Integração continua
@@ -57,15 +64,28 @@ Monitor da porta serial
 Upload automatico do programa
 Tool chains
 */
-</code></span></pre>
+</code></span></pre></div>
+
 </div>
 
 </section>
 <section>
+  <div>
+    <strong># Embedded Dev</strong>
+  </div>
   <img src="./platformio-embedded-development.b0a1d37a.png" alt="">
 </section>
 <section>
+  <div>
+    <strong># Library Maneger</strong>
+  </div>
   <img src="./platformio-library-manager.c19b6f68.png" alt="">
+</section>
+<section>
+  <div>
+    <strong># SCons Builder</strong>
+  </div>
+  <img src="./platformio-scons-builder.3196c963.png" alt="">
 </section>
       </section>
 
@@ -75,21 +95,144 @@ Tool chains
   <h1>Instalação</h1>
 
         </section>
-        <section>
 
-
+<section>
 <div class="mock-window">
-<div class="top"></div><pre><span class="terminal"><code class="cpp"
-># update dependent packages to the latest versions
+<div class="top"></div>
+<div class="scroll"><pre><span class="terminal"><code class="cpp">
+# update dependent packages to the latest versions
 pip install -U pip setuptools
 
 # install/upgrade the latest version of PlatformIO
 pip install -U platformio
-</code></span></pre>
+</code></span></pre></div>
 </div>
 
 </section>
+
+<section>
+<div class="mock-window">
+<div class="top"></div>
+<div class="scroll">
+<pre><span class="terminal tiny"><code class="cpp">
+platformio init
+platformio init --board=TYPE_1 --board=TYPE_2 --board=TYPE_N
+
+# Print all available pre-configured embedded boards
+platformio boards
+
+# Filter boards by "Query"
+platformio boards arduino
+
+platformio init --board = megaatmega2560
+</code></span></pre>
+
+</div>
+</div>
+
+</section>
+
+<section>
+<div class="mock-window">
+<div class="top"></div>
+<div class="scroll">
+<pre><span class="terminal tiny"><code>
+#platform.ini
+
+[env:megaatmega2560]
+platform = atmelavr
+framework = arduino
+board = megaatmega2560
+targets = upload
+</code></span></pre>
+
+</div>
+</div>
+
+</section>
+
+<section>
+<div class="mock-window">
+<div class="top"></div>
+<div class="scroll">
+<pre><span class="terminal"><code>
+platformio run
+platformio run --target upload
+platformio run --target clean
+
+# monitor seiral
+platformio serialports list
+platformio serialports monitor
+
+</code></span></pre>
+
+</div>
+</div>
+
+</section>
+
+
       </section>
+
+
+<section>
+
+<section>
+    <h1>Library Manager</h1>
+</section>
+
+  <section>
+  <div class="mock-window">
+  <div class="top"></div>
+  <div class="scroll">
+  <pre><span class="terminal"><code>
+platformio lib install
+platformio lib list
+platformio lib register
+platformio lib search
+platformio lib show
+platformio lib uninstall
+platformio lib update
+</code></span></pre>
+
+  </div>
+  </div>
+
+  </section>
+  </section>
+
+<section>
+
+<section>
+    <h1>Integrações com IDEs</h1>
+</section>
+
+  <section>
+  <img src="./img/vim.png" alt="" class="icons">
+  <img src="./img/subl.png" alt="" class="icons">
+  <img src="./img/atom.png" alt="" class="icons">
+  <img src="./img/vs.png" alt="" class="icons">
+  </section>
+  </section>
+
+<section>
+
+<section>
+    <h1>Done</h1>
+</section>
+
+  <section>
+    <p>
+      http://ariel.pchara.com
+    </p>
+    <p>
+      https://github.com/arielpchara
+    </p>
+    <p>
+      https://twitter.com/pchara
+    </p>
+  </section>
+  </section>
 
     </div>
   </div>
@@ -148,7 +291,7 @@ pip install -U platformio
       var string = $(event.currentSlide).find(".terminal").html();
       $(event.currentSlide).find(".terminal").typed({
         strings: [string],
-        typeSpeed: -50,
+        typeSpeed: -150,
         startDelay: 300,
         cursorChar: " "
       });

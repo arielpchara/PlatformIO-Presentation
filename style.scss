@@ -2,17 +2,20 @@
 @import "./font/stylesheet.css";
 
 .reveal {
+  // background-image: url("./back.jpg");
+  background-image: url("./img/back1.png");
+  background-size: cover;
+
   h1,h2,h3 {
     font-family: 'Arvo', serif;
   }
-  background-image: url("./back.jpg");
-  background-size: cover;
+
+
+
   .mock-window {
-    height: 60%;
     @include background-image(linear-gradient(rgba(black,0.8) 0%, rgba(black,0.6) 100%));
     border-radius: 6px;
-    min-height: 400px;
-
+    height: 600px;
     // border: 1px solid #EEE;
     box-shadow: 2px 2px 10px rgba(black,0.5);
     >.top {
@@ -23,6 +26,8 @@
       background-repeat: no-repeat;
       text-align: left;
       margin-top: -14px;
+      position: relative;
+      z-index: 10;
       i {
         float: left;
         height: 14px;
@@ -49,18 +54,31 @@
       }
     }
   }
+  .scroll {
+    height: inherit;
+    overflow: scroll;
+    position: relative;
+    top: -30px;
+  }
   pre {
     box-shadow: none;
-    width: 100%;
+    width: auto;
     margin: 0;
     padding: 20px;
     line-height: 1.4em;
+    position: absolute;
+    bottom: 0;
     .terminal {
       color: white;
       background: none;
       box-shadow: none;
       font-family: "pragmata";
       display: inline;
+      font-size: 1.4em;
+      line-height: 1.2em;
+      &.tiny {
+        font-size: .95em;
+      }
     }
     code {
       display: inline;
@@ -72,6 +90,11 @@
       background: none;
       border: none;
       box-shadow: none;
+      &.icons {
+        width: 90px;
+        height: 90px;
+        margin: 10px 20px;
+      }
     }
   }
 

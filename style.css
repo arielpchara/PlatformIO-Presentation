@@ -1,15 +1,14 @@
 @import url(./font/stylesheet.css);
 .reveal {
-  background-image: url("./back.jpg");
+  background-image: url("./img/back1.png");
   background-size: cover; }
   .reveal h1, .reveal h2, .reveal h3 {
     font-family: 'Arvo', serif; }
   .reveal .mock-window {
-    height: 60%;
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
     background-image: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
     border-radius: 6px;
-    min-height: 400px;
+    height: 600px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); }
     .reveal .mock-window > .top {
       height: 30px;
@@ -18,7 +17,9 @@
       background-position: top left;
       background-repeat: no-repeat;
       text-align: left;
-      margin-top: -14px; }
+      margin-top: -14px;
+      position: relative;
+      z-index: 10; }
       .reveal .mock-window > .top i {
         float: left;
         height: 14px;
@@ -41,18 +42,29 @@
           left: 0;
           right: 0;
           margin: auto; }
+  .reveal .scroll {
+    height: inherit;
+    overflow: scroll;
+    position: relative;
+    top: -30px; }
   .reveal pre {
     box-shadow: none;
-    width: 100%;
+    width: auto;
     margin: 0;
     padding: 20px;
-    line-height: 1.4em; }
+    line-height: 1.4em;
+    position: absolute;
+    bottom: 0; }
     .reveal pre .terminal {
       color: white;
       background: none;
       box-shadow: none;
       font-family: "pragmata";
-      display: inline; }
+      display: inline;
+      font-size: 1.4em;
+      line-height: 1.2em; }
+      .reveal pre .terminal.tiny {
+        font-size: .95em; }
     .reveal pre code {
       display: inline;
       background: none; }
@@ -60,6 +72,10 @@
     background: none;
     border: none;
     box-shadow: none; }
+    .reveal section img.icons {
+      width: 90px;
+      height: 90px;
+      margin: 10px 20px; }
   .reveal .typed-cursor {
     opacity: 1;
     font-weight: 100;
